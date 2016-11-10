@@ -1,8 +1,11 @@
 <div>
-    <div ng-show="visible">
-        <select ng-model="keyCopy" class="form-control" style="height: 34px;width: calc(100% - 78px); float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;">
-            <option ng-repeat="option in options" value="{{option.key}}">{{option.value}}</option>
-        </select>
+    <div ng-show="visible" class="has-feedback" ng-class="{'has-error': hasError}" >
+        <div class="has-feedback" ng-class="{'has-error': hasError}" style="width: calc(100% - 78px); float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;">
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="hasError"></span>
+            <select ng-model="keyCopy" class="form-control edit-form-control"  style="height: 34px;">
+                <option ng-repeat="option in options" value="{{option.key}}">{{option.value}}</option>
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary editable-submit" ng-click="submit()" style="height: 34px;border-radius: 0;border-left-width: 0px;">
             <i class="glyphicon glyphicon-ok"></i>
         </button>

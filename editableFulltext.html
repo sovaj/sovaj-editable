@@ -1,5 +1,6 @@
 <div>
-    <div ng-show="visible">
+    <div ng-show="visible" class="has-feedback" ng-class="{'has-error': hasError}" >
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="hasError"></span>
         <div text-angular="text-angular" ng-model="textCopy"
              style="width: 100%; margin-bottom: 10px;float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;"></div>
         <div class="btn btn-default" class="editable-field" ng-click="cancel()" ng-disabled="updating">Cancel</div>

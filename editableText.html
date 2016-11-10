@@ -1,7 +1,9 @@
 <div>
-    <div ng-show="visible">
-    <!--<div>-->
-        <input type="text" class="form-control editable-input" ng-model="textCopy" style="width: calc(100% - 78px); float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;">
+    <div ng-show="visible" class="has-feedback" ng-class="{'has-error': hasError}" >
+        <div class="has-feedback" ng-class="{'has-error': hasError}" style="width: calc(100% - 78px); float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;">
+            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" ng-show="hasError"></span>
+            <input type="text" class="form-control  edit-form-control" ng-model="textCopy">
+        </div>
         <button type="submit" class="btn btn-primary editable-submit" ng-click="submit()" style="height: 34px;border-radius: 0;border-left-width: 0px;">
             <i class="glyphicon glyphicon-ok"></i>
         </button>
