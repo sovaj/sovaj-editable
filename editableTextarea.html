@@ -1,0 +1,19 @@
+<div>
+    <div ng-show="visible">
+        <textarea class="form-control" ng-model="editTextarea" rows="{{eRows}}" style="width: calc(100% - 78px); float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;"></textarea>
+        <button type="submit" class="btn btn-primary editable-submit" ng-click="submit()" style="height: 34px;border-radius: 0;border-left-width: 0px;">
+            <i class="glyphicon glyphicon-ok"></i>
+        </button>
+        <button type="button" class="btn btn-default editable-cancel" ng-click="cancel()" style="height: 34px;border-top-left-radius: 0;border-bottom-left-radius: 0;margin-left: -4;border-left-width: 0px;">
+            <i class="glyphicon glyphicon-remove"></i>
+        </button>
+    </div>
+    <div ng-class="{'form-control pointer' :  currentJob.$$overTitlePosition}"
+         ng-mouseenter="currentJob.$$overTitlePosition = true"
+         ng-mouseleave="currentJob.$$overTitlePosition = false"
+         ng-click="show()"
+         ng-hide="visible">
+        <div ng-class="{'fake-form-control' :  !currentJob.$$overTitlePosition}">{{editTextarea}} &nbsp;</div>
+    </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div>
+    <div ng-show="visible">
+        <div text-angular="text-angular" ng-model="textCopy"
+             style="width: 100%; margin-bottom: 10px;float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;"></div>
+        <div class="btn btn-default" class="editable-field" ng-click="cancel()" ng-disabled="updating">Cancel</div>
+        <span class="btn btn-primary pull-right editable-field-action" ng-hide="updating" ng-click="submit()">Update</span>
+        <span class="btn btn-primary pull-right editable-field-action" ng-show="updating" disabled="true">Updating ...</span>
+    </div>
+    <div ng-class="{'form-control pointer' :  over}"
+         ng-mouseenter="over = true"
+         ng-mouseleave="over = false"
+         ng-click="show()"
+         ng-hide="visible">
+        <div ng-class="{'fake-form-control' :  !over}" ng-bind-html="editFulltext">&nbsp;</div>
+    </div>
+</div>

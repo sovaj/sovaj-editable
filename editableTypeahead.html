@@ -1,0 +1,27 @@
+<div id="position">
+    <div ng-class="{'form-control pointer' :  currentJob.$$overTitlePosition}"
+         ng-mouseenter="currentJob.$$overTitlePosition = true"
+         ng-mouseleave="currentJob.$$overTitlePosition = false"
+         ng-click="updateField('position')"
+         ng-hide="visible">
+        <div ng-class="{'fake-form-control' :  !currentJob.$$overTitlePosition}">{{currentJob.position.title}} &nbsp;</div>
+    </div>
+</div>
+<div id="positionEdit" style="display: none">
+    <angucomplete-alt id="position" display-searching="false" display-no-result="false"
+                      placeholder="Position"
+                      pause="400" initial-value="{{currentJob.position.title}}"
+                      selected-object="positionSelected"
+                      remote-url="./../../api/secure/position/find?value="
+                      title-field="title"
+                      input-class="form-control"
+                      match-class="highlight" input-changed="currentJobActualPositionInput"
+                      style="width: calc(100% - 78px); float: left;border-top-right-radius: 0;border-bottom-right-radius: 0;"></angucomplete-alt>
+
+    <button type="submit" class="btn btn-primary editable-submit" ng-click="updateJob('position')" style="height: 34px;border-radius: 0;border-left-width: 0px;">
+        <i class="glyphicon glyphicon-ok"></i>
+    </button>
+    <button type="button" class="btn btn-default editable-cancel" ng-click="updateField('position')" style="height: 34px;border-top-left-radius: 0;border-bottom-left-radius: 0;margin-left: -4;border-left-width: 0px;">
+        <i class="glyphicon glyphicon-remove"></i>
+    </button>
+</div>
